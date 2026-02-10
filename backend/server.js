@@ -1,21 +1,28 @@
+require("dotenv").config();
+
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
 
 const app = express();
-const PORT = 5000;
-
-// Allow requests from Live Server
-app.use(cors({
-  origin: "http://127.0.0.1:5500"
-}));
-
+app.use(cors());
 app.use(express.json());
 
-app.post("/student", (req, res) => {
-  console.log("Received data:", req.body);
-  res.status(200).json({ message: "Student data saved successfully" });
+// MongoDB connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected");
+  })
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
+
+// Test route
+app.get("/", (req, res) => {
+  res.send("Backend is running");
 });
 
-app.listen(PORT, "127.0.0.1", () => {
-  console.log("Backend server running on port 5000");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Backend server running on port " + PORT);
 });
