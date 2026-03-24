@@ -1,3 +1,4 @@
+/* BODY BACKGROUND */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -25,18 +26,21 @@ header p {
   margin-top: 10px;
 }
 
-/* SECTION */
+/* SECTION CARDS (SOFT COLOR) */
 section {
   width: 80%;
   margin: 25px auto;
   padding: 25px;
   border-radius: 15px;
-  background: linear-gradient(135deg, #fdfbfb, #dfe9f3);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+  /* SOFT MATCHING COLOR */
+  background: linear-gradient(135deg, #f3f5ff, #e6ecff);
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   transition: 0.3s;
 }
 
-/* HOVER */
+/* HOVER EFFECT */
 section:hover {
   transform: translateY(-5px);
 }
@@ -53,7 +57,7 @@ ul {
 }
 
 ul li {
-  background: #eef2f7;
+  background: #dde3ff;
   margin: 8px 0;
   padding: 12px;
   border-radius: 8px;
@@ -61,16 +65,25 @@ ul li {
 }
 
 ul li:hover {
-  background: #dde6f3;
+  background: #cfd7ff;
 }
 
-/* INPUT */
+/* INPUT FIELDS (LIGHT MATCHING) */
 input, textarea {
   width: 95%;
   padding: 12px;
   margin-top: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #cfd7ff;
+  background: #f8f9ff;
+  transition: 0.3s;
+}
+
+/* INPUT FOCUS */
+input:focus, textarea:focus {
+  border-color: #5f2c82;
+  outline: none;
+  box-shadow: 0 0 6px rgba(95,44,130,0.3);
 }
 
 /* BUTTON */
@@ -84,6 +97,7 @@ button {
   transition: 0.3s;
 }
 
+/* BUTTON HOVER */
 button:hover {
   transform: scale(1.05);
   background: linear-gradient(135deg, #4b1f6f, #3c8d8a);
