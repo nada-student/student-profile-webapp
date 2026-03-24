@@ -2,25 +2,23 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(to right, #fdfbfb, #ebedee);
   color: #333;
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 40px;
-  letter-spacing: 1px;
+  font-size: 38px;
 }
 
 header p {
@@ -32,30 +30,22 @@ header p {
 /* SECTION CARDS */
 section {
   width: 80%;
-  margin: 30px auto;
+  margin: 25px auto;
   padding: 25px;
   border-radius: 15px;
-
-  /* glass effect */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-  color: white;
-
-  transition: all 0.4s ease;
+  background: white;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
 }
 
-/* HOVER FLOAT */
+/* HOVER EFFECT */
 section:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+  transform: translateY(-5px);
 }
 
 /* HEADINGS */
 h2 {
-  margin-bottom: 10px;
-  font-weight: bold;
+  color: #6a11cb;
 }
 
 /* LIST */
@@ -65,17 +55,15 @@ ul {
 }
 
 ul li {
-  background: rgba(255,255,255,0.2);
+  background: #f3f4f6;
   margin: 8px 0;
   padding: 12px;
   border-radius: 8px;
   transition: 0.3s;
 }
 
-/* LIST HOVER */
 ul li:hover {
-  background: rgba(255,255,255,0.4);
-  transform: scale(1.05);
+  background: #e0e7ff;
 }
 
 /* INPUTS */
@@ -83,36 +71,31 @@ input, textarea {
   width: 95%;
   padding: 12px;
   margin-top: 10px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
 }
 
 /* INPUT FOCUS */
 input:focus, textarea:focus {
-  box-shadow: 0 0 10px rgba(255,255,255,0.7);
+  border-color: #6a11cb;
+  outline: none;
+  box-shadow: 0 0 5px rgba(106,17,203,0.3);
 }
 
 /* BUTTON */
 button {
-  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   color: white;
   padding: 12px 25px;
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 /* BUTTON HOVER */
 button:hover {
-  transform: scale(1.1);
-  background: linear-gradient(45deg, #ff6a88, #ff99ac);
-}
-
-/* EMAIL TEXT */
-section p {
-  margin-top: 15px;
-  font-size: 14px;
-  opacity: 0.9;
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #5a0fbf, #1e63e0);
 }
