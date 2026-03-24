@@ -1,13 +1,10 @@
 document.getElementById("studentForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const studentData = {
+  const data = {
     name: document.getElementById("name").value,
-    rollno: document.getElementById("rollno").value,
-    age: document.getElementById("age").value,
-    address: document.getElementById("address").value,
-    contact: document.getElementById("contact").value,
-    email: document.getElementById("email").value
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value
   };
 
   try {
@@ -16,13 +13,13 @@ document.getElementById("studentForm").addEventListener("submit", async function
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(studentData)
+      body: JSON.stringify(data)
     });
 
     const result = await response.json();
     alert(result.message);
   } catch (error) {
-    alert("Error submitting form");
+    alert("Error sending message");
     console.error(error);
   }
 });
