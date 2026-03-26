@@ -1,43 +1,29 @@
-name: Node.js CI Pipeline
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [18]
 
     steps:
-    
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Check code (lint optional)
-      run: |
-        echo "No lint configured yet"
-
-    - name: Run tests (if available)
-      run: |
-        echo "No tests yet"
-
-    - name: Start server check
-      run: |
-        node server.js &
-        sleep 5
-        curl http://localhost:5000
+      - name: Start server (test)
+        run: node server.js
